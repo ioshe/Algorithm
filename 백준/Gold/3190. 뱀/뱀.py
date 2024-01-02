@@ -2,7 +2,7 @@
 from sys import stdin
 from collections import deque
 bs = int(input()) #board_size
-apple_loc = [list(map(int,stdin.readline().split())) for i in range(int(input()))] 
+apple_set = set(tuple(map(int, stdin.readline().split())) for i in range(int(input())))
 rotate_snake = [list(stdin.readline().split()) for i in range(int(input()))]
 
 cur_x = cur_y = 1
@@ -33,11 +33,11 @@ while True :
     # apple 이 없으면 popleft 
     else :
         snake_move.appendleft([cur_y,cur_x])
-        if [cur_y,cur_x] not in apple_loc :
+        if (cur_y, cur_x) not in apple_set:
             snake_move.pop()
-        else :
-            apple_loc.pop(apple_loc.index([cur_y,cur_x]))
-    
+        else:
+            apple_set.remove((cur_y, cur_x))
+            
     #방향 트는거
     if rotate_snake and cnt == int(rotate_snake[0][0]) :
         turn = rotate_snake.pop(0)[1]
