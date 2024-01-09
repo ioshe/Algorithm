@@ -13,8 +13,8 @@ def solution(id_list, report, k):
 
 
     for b_index,bit in enumerate(bit_table) : #bit_table 참조 이는 id 를 가진 사람이 누굴 신고했나가 기록되어 있음
-        for index,b_value in enumerate(bit) : #bit_table 
-            if b_value and reported[id_list[index]] >= k : 
-                answer[id_list[b_index]] +=1
+        for index,b_value in enumerate(bit) : #bit_table의 행 순서대로, 현재 for문에서는 index 는 누가 신고당했는지 b_value는 신고를 한 적이 있는지를 조사
+            if b_value and reported[id_list[index]] >= k : #신고한 적이 있으며, 신고당한 사람이 k번보다 많이 당했다면
+                answer[id_list[b_index]] +=1            #신고를 한사람에게 메일을 보낸다.
 
     return list(answer.values())
