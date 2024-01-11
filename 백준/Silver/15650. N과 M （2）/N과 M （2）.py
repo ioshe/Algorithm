@@ -1,17 +1,21 @@
-def dfs(visited, i, N, M, result):
+# https://www.acmicpc.net/problem/15650
+
+visited = []
+result = []
+def dfs(i) :
+    global visited
     if len(visited) == M:
-        result.append(visited)
+        result.append(visited.copy())
         return
 
-    for j in range(i, N + 1):
-        if j not in visited:
-            new_visited = visited + [j]  # Create a new path including j
-            dfs(new_visited, j + 1, N, M, result)  # Pass the new path
+    while i < N+1 :
+    #for i in range(1,N+1) :
+        if not(visited) or i not in visited :
+            visited.append(i)
+            i+=1
+            dfs(i)
+            visited.pop()
 
-def main():
-    N, M = map(int, input().split())
-    result = []
-    dfs([], 1, N, M, result)
-    print("\n".join(" ".join(map(str,re)) for re in result))
-
-main()
+N,M = map(int,input().split())
+dfs(1)
+print("\n".join(" ".join(map(str,re)) for re in result))
