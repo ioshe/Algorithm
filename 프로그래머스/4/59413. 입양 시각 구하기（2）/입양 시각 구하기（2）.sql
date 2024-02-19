@@ -1,15 +1,14 @@
--- 코드를 입력하세요
-with recursive time as (
+with recursive test as (
     select 0 as hour
-    union all
-    select hour+1 from time where hour<23
+    UNION ALL
+    select hour+1 from test where test.hour < 23
 )
 
 SELECT 
-      time.hour  AS HOUR
-    , COUNT(animal_id) AS COUNT
-FROM time 
-LEFT JOIN ANIMAL_OUTS 
-ON time.hour = HOUR(ANIMAL_OUTS.DATETIME)
-GROUP BY HOUR
+    test.hour                    AS HOUR, 
+    COUNT(ANIMAL_OUTS.ANIMAL_ID) AS COUNT 
+FROM test
+LEFT JOIN ANIMAL_OUTS
+ON test.hour = HOUR(ANIMAL_OUTS.DATETIME)
+GROUP BY test.hour
 ORDER BY HOUR
