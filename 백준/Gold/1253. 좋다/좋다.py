@@ -10,22 +10,21 @@ count = 0
 for i in range(n) :
     left = 0
     right = n - 1
-
     while left < right :
-        if left == i :
-            left += 1
-            continue
-        if right == i :
-            right -= 1
-            continue
-
-        if nums[left] + nums[right] > nums[i] :
-            right -= 1
-        elif nums[left] + nums[right] < nums[i] :
+        hap = nums[left] + nums[right]
+        if hap == nums[i] :
+            if left == i :
+                left += 1
+            elif right == i :
+                right -= 1
+            else:
+                count += 1
+                left += 1 # 또는 right -= 1, 둘 중 하나를 선택하여 다른 조합 탐색
+                break
+        elif hap < nums[i] :
             left += 1
         else :
-            count += 1
+            right -= 1
             #print(nums[i])
-            break
         
 print(count)
