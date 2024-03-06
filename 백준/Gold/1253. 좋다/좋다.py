@@ -6,7 +6,7 @@ nums = list(map(int,stdin.readline().split()))
 
 nums.sort()
 
-def two_pointer(ind):
+def two_pointer(i):
     global count
     left = 0
     right = n - 1
