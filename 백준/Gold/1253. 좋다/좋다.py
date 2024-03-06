@@ -6,8 +6,8 @@ nums = list(map(int,stdin.readline().split()))
 
 nums.sort()
 
-count = 0
-for i in range(n) :
+def two_pointer(ind):
+    global count
     left = 0
     right = n - 1
     while left < right :
@@ -27,4 +27,8 @@ for i in range(n) :
             right -= 1
             #print(nums[i])
         
+count = 0
+for i in range(n) :
+    two_pointer(i)
+
 print(count)
