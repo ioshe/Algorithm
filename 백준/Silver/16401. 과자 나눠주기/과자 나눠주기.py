@@ -13,10 +13,9 @@ while start <= end :
     mid = (start + end) // 2
     for i in nums :
         count += i // mid
-        if count >= M :
-            start = mid + 1
-            break
-    if count < M :
+    if count >= M :
+        start = mid + 1
+    elif count < M :
         end = mid -1
 
 print(end)
