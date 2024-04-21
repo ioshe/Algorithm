@@ -1,17 +1,23 @@
 # https://www.acmicpc.net/problem/2018
-n = int(input())
+import sys
+N = int(sys.stdin.readline())
 left, right = 1, 1
 temp = 1
-count = 0
+count = 1 # 자기 자신을 포함한다.
 
-while right <= n:
-    if temp < n:
+## 1, 2만 예외처리
+if N == 1 or N == 2:
+  print(1)
+  sys.exit()
+
+while right < N // 2 + 2:
+    if temp < N:
         right += 1
         temp += right
-    elif temp > n:
+    elif temp > N:
         temp -= left
         left += 1
-    else:  # temp == n
+    else:  # temp == N
         count += 1
         right += 1
         temp += right
