@@ -1,0 +1,6 @@
+-- 코드를 작성해주세요
+select COUNT(*) as FISH_COUNT
+from FISH_INFO As fi
+JOIN FISH_NAME_INFO as fn
+On fi.FISH_TYPE = fn.FISH_TYPE
+WHERE fn.FISH_NAME IN ('BASS','SNAPPER') 
