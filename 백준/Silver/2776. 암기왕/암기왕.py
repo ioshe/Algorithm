@@ -21,14 +21,14 @@ from sys import stdin
 T = int(stdin.readline())
 for _ in range(T) :
     N = int(stdin.readline())
-    diary1 = set(map(int,stdin.readline().split()))
+    diary1 = set(stdin.readline().split())
     M = int(stdin.readline())
-    diary2 = list(map(int,stdin.readline().split()))
+    diary2 = list(stdin.readline().split())
     result = []
     for i in diary2 :
         if i in diary1 :
-            result.append(1)
+            result.append('1')
             continue
-        result.append(0)
+        result.append('0')
 
-    print("\n".join(map(str,result)))
+    print("\n".join(result))
