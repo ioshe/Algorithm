@@ -9,28 +9,17 @@ from sys import stdin
 '''
 
 N,K = map(int,stdin.readline().split())
-nums = list(map(lambda a: list(map(int,a.split())),stdin.readlines()))
+countries = list(map(lambda a: list(map(int,a.split())),stdin.readlines()))
 
-nums.sort(key = lambda a : (-a[1],-a[2],-a[3]))
+countries.sort(key = lambda a : (-a[1],-a[2],-a[3]))
 
-i = 1
+# 국가 K의 등수를 계산합니다.
 rank = 1
-dupli = 0
-# rank = [0 for i in range(N)]
-#print(nums)
-while i < N :    
-    if nums[i][1:] == nums[i-1][1:] :
-        dupli += 1
-        # rank[nums[i][0]] = i
-    else :
-        rank += dupli 
-        dupli = 0
-        rank += 1
-        # rank[nums[i][0]] = i
-    
-    if nums[i][0] == K :
+for i in range(N):
+    if countries[i][0] == K:
         print(rank)
         break
+    if i < N - 1:
+        if countries[i][1:] != countries[i + 1][1:]:
+            rank = i + 2
 
-    i+=1
-    
