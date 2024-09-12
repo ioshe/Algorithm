@@ -46,7 +46,7 @@ for i in range(1,n+1) :
 # 위상 정렬
 while queue :
     # 데이터를 뺏는데 앞에서 뺼꺼냐 ㅇ뒤에서 뺄꺼냐 일단 뒤에서 빼보자
-    current = queue.popleft()
+    current = queue.pop()
     for next in graph[current] :
         indegree [next] -= 1
         # 선행 건물이 완성되는 최대 시간에서 현 재 건물의 건설 시간을 더함
