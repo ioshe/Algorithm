@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 175508 KB, 시간: 2432 ms
+메모리: 155764 KB, 시간: 2276 ms
 
 ### 분류
 
@@ -12,7 +12,7 @@
 
 ### 제출 일자
 
-2024년 9월 14일 18:07:44
+2024년 9월 14일 23:18:42
 
 ### 문제 설명
 
@@ -30,7 +30,7 @@
 
 ### 입력 
 
- <p>첫째 줄에는 백남이가 알고 있는 아이템 사이의 관계의 수 $N$(1 ≤ $N$ ≤ 200,000)를 입력받는다. $N$개의 줄에 걸쳐서 아이템 이름을 의미하는 문자열 2개 A B가 주어진다. 아이템 A는 아이템 B를 구입하기 위해 앞서 구매해야 하는 것을 의미하며, 아이템 A와 아이템 B는 항상 다르다. 모든 아이템은 선후관계에서 적어도 한 번씩 등장한다. 아이템 이름은 알파벳 소문자로만 이루어져 있고, 공백을 포함하지 않는다. 아이템 이름의 길이는 1 이상 15 이하이다.</p>
+ <p>첫째 줄에는 백남이가 알고 있는 아이템 사이의 관계의 수 <mjx-container class="MathJax" jax="CHTML" style="font-size: 109%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D441 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>N</mi></math></mjx-assistive-mml><span aria-hidden="true" class="no-mathjax mjx-copytext">$N$</span></mjx-container>(1 ≤ <mjx-container class="MathJax" jax="CHTML" style="font-size: 109%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D441 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>N</mi></math></mjx-assistive-mml><span aria-hidden="true" class="no-mathjax mjx-copytext">$N$</span></mjx-container> ≤ 200,000)를 입력받는다. <mjx-container class="MathJax" jax="CHTML" style="font-size: 109%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D441 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>N</mi></math></mjx-assistive-mml><span aria-hidden="true" class="no-mathjax mjx-copytext">$N$</span></mjx-container>개의 줄에 걸쳐서 아이템 이름을 의미하는 문자열 2개 A B가 주어진다. 아이템 A는 아이템 B를 구입하기 위해 앞서 구매해야 하는 것을 의미하며, 아이템 A와 아이템 B는 항상 다르다. 모든 아이템은 선후관계에서 적어도 한 번씩 등장한다. 아이템 이름은 알파벳 소문자로만 이루어져 있고, 공백을 포함하지 않는다. 아이템 이름의 길이는 1 이상 15 이하이다.</p>
 
 ### 출력 
 
