@@ -3,11 +3,11 @@ import heapq
 from sys import stdin
 from collections import defaultdict
 
-def dijkstra(graph, start ,end):
+def dijkstra(N,graph, start ,end):
     priority_queue = []
     heapq.heappush(priority_queue, (0,start))
     
-    distances = {node: float('inf') for node in range(1, N + 1)}
+    distances = [float('inf')] * (N + 1)
     distances[start] = 0
     
     while priority_queue:
@@ -20,7 +20,7 @@ def dijkstra(graph, start ,end):
         for neighbor, weight in graph[current_node].items():
             distance = current_distance + weight
             
-            if distance < distances.get(neighbor,-float('inf')):
+            if distance < distances[neighbor]:
                 distances[neighbor] = distance
                 heapq.heappush(priority_queue, (distance, neighbor))
     
@@ -30,7 +30,7 @@ def dijkstra(graph, start ,end):
 N = int(stdin.readline())
 M = int(stdin.readline())
 
-graph = defaultdict(dict)
+graph = [dict() for _ in range(N + 1)]
 for i in range(M):
     start, end, cost = map(int, input().split())
     # 간선 추가
@@ -39,4 +39,4 @@ for i in range(M):
 
 start, end = map(int,stdin.readline().split())
 
-print(dijkstra(graph,start,end))
+print(dijkstra(N,graph,start,end))
