@@ -1,7 +1,18 @@
-t = input()
-cnt = 0
-for _ in range(int(input())):
-    s = input()
-    if t in s*2:
-        cnt += 1
-print(cnt)
+# https://www.acmicpc.net/problem/5555
+
+from sys import stdin
+
+
+text = stdin.readline().strip()
+
+result = 0
+for i in range(int(stdin.readline())):
+    temp = stdin.readline().strip()
+    temp += temp[:len(text)]
+    for j in range(len(temp)):
+        # print(temp[j:j+len(text)])
+        if temp[j:j+len(text)] == text:
+            result +=1
+            break
+
+print(result)
