@@ -14,22 +14,28 @@ moving = [(1,0),(0,1),(-1,0),(0,-1)]
 def bfs(n,i,j,visited,graph,L,R):
     territory = [(i,j)]
     queue = deque([(i,j)])
-    visited[i][j] = 1
+    visited[i][j] = True
+    population_sum = graph[i][j]
+    count = 1
+    
     while queue :
         x,y = queue.popleft()
         for mx,my in moving:
             nx, ny = mx + x, my + y
             if 0 <= nx < n and 0 <= ny < n and not visited[nx][ny]:
-                population_moving = abs(graph[x][y] - graph[nx][ny])
-                if L <= population_moving and population_moving <= R:
-                    territory.append((nx,ny))
+                diff = abs(graph[x][y] - graph[nx][ny])
+                if L <= diff <= R:
                     queue.append((nx,ny))
-                    visited[nx][ny] = 1
+                    territory.append((nx,ny))
+                    visited[nx][ny] = True
+                    population_sum += graph[nx][ny]
+                    count += 1
+                    
     
-    if len(territory) >= 2:
-        temp = int(sum(graph[x][y] for x,y in territory) / len(territory))
+    if count > 1:
+        new_population = population_sum // count
         for x,y in territory:
-           graph[x][y] = temp
+           graph[x][y] = new_population
         return True
     else :
         return False    
@@ -37,14 +43,11 @@ def bfs(n,i,j,visited,graph,L,R):
 n, L, R = map(int,stdin.readline().split())
 graph = list(map(lambda a : list(map(int,a.split())),stdin.readlines()))
 
-visited = [[0 for j in range(n)] for i in range(n)]
 result = False
 count = 0
 
 while True:
-    for i in range(n):
-        for j in range(n): 
-            visited[i][j] = 0
+    visited = [[False] * n for _ in range(n)]
         
     for i in range(n):
         for j in range(n):
