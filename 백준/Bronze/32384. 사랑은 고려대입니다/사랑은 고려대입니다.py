@@ -1,0 +1,1 @@
+print(" ".join(["LoveisKoreaUniversity" for i in range(int(input()))]))
