@@ -1,9 +1,7 @@
 import datetime
 
-date = datetime.datetime.now()
+data = datetime.datetime.now() + datetime.timedelta(hours=9)
 
-print(date.year)
-
-print(date.month)
-
-print(date.day)
+print(data.year)
+print(data.month)
+print(data.day)
